@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hub de Jogos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Hub de Jogos</h1>
+    <nav>
+      <button data-target="home" class="nav-btn active">Início</button>
+      <button data-target="tictactoe" class="nav-btn">Tic Tac Toe</button>
+      <button data-target="memory" class="nav-btn">Memória</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <h2>Bem‑vindo</h2>
+      <p>Escolha um jogo no menu acima. Projetado para aprendizado e diversão rápida.</p>
+    </section>
+
+    <section id="tictactoe" class="page">
+      <h2>Tic Tac Toe</h2>
+      <div class="game-board" id="ttt-board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
+      <div class="controls">
+        <p id="ttt-status">Vez de: <strong id="ttt-player">X</strong></p>
+        <button id="ttt-reset">Reiniciar</button>
+      </div>
+    </section>
+
+    <section id="memory" class="page">
+      <h2>Jogo da Memória</h2>
+      <div class="memory-controls">
+        <label for="mem-size">Tamanho:</label>
+        <select id="mem-size">
+          <option value="8">8 pares</option>
+          <option value="6">6 pares</option>
+          <option value="4">4 pares</option>
+        </select>
+        <button id="mem-start">Iniciar</button>
+        <p id="mem-status">Clique em Iniciar para começar.</p>
+      </div>
+      <div id="mem-board" class="memory-board"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Feito com HTML, CSS e JavaScript</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
