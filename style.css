@@ -1,0 +1,100 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#06b6d4;
+  --muted:#94a3b8;
+  --win:#10b981;
+  --lose:#ef4444;
+  --glass: rgba(255,255,255,0.03);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#071022);
+  color:#e6eef6;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+header{
+  padding:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+h1{margin:0;font-size:1.2rem}
+nav{display:flex;gap:8px}
+.nav-btn{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid transparent;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.nav-btn.active{color:var(--accent); border-color:rgba(6,182,212,0.15); background:var(--glass)}
+
+main{flex:1;padding:20px;max-width:980px;margin:0 auto;width:100%}
+.page{display:none}
+.page.active{display:block}
+
+.game-board{
+  width:320px;
+  max-width:90vw;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin:12px 0;
+}
+.cell{
+  background:linear-gradient(180deg,#071226,#0b1b2b);
+  height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2.2rem;
+  border-radius:8px;
+  cursor:pointer;
+  user-select:none;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.controls{display:flex;align-items:center;gap:12px}
+
+.memory-controls{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.memory-board{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  max-width:720px;
+}
+.mem-card{
+  background:linear-gradient(180deg,#071226,#0b1b2b);
+  height:90px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  cursor:pointer;
+  color:transparent;
+  border:1px solid rgba(255,255,255,0.03);
+  position:relative;
+  transition:transform .25s;
+}
+.mem-card.revealed{color:#e6eef6; transform:rotateY(0deg)}
+.mem-card.matched{background:linear-gradient(90deg,#052f2a,#083b2f); border-color:rgba(16,185,129,0.3)}
+footer{padding:12px;text-align:center;color:var(--muted);font-size:0.9rem;border-top:1px solid rgba(255,255,255,0.02)}
+@media (max-width:600px){
+  .game-board .cell{height:80px;font-size:1.6rem}
+  .mem-card{height:70px;font-size:1rem}
+  .memory-board{grid-template-columns:repeat(3,1fr)}
+}
